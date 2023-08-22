@@ -1,7 +1,19 @@
 import os
 
-def choose_game_type():
+logo = '''
+             _____ _       _____           _____         
+            |_   _(_)__ __|_   _|_ _ __ __|_   _|__  ___ 
+              | | | / _|___|| |/ _` / _|___|| |/ _ \/ -_)
+              |_| |_\__|    |_|\__,_\__|    |_|\___/\___|                                                      
+'''
+description = """Welcome to the Tic-Tac-Toe game. Your goal is to complete a row, a column, or a diagonal with three X's or O's.
+You can play against another player or the computer.
+You can choose the field you want to play on by entering the coordinates, e.g.: a2.
+"""
+def game_setup():
     """ Allows the player to choose whether to play against the computer or against another player. """
+    print(logo)
+    print(description)
     game_type = input("You want to play against another player or computer? [Player/Computer]: ").lower()
 
     while game_type not in ['computer', 'c', 'player', 'p']:
@@ -42,7 +54,7 @@ board = {
     'c3': '   '
 }
 
-players_names = choose_game_type()
+players_names = game_setup()
 player_moves = {players_names[0]: [], players_names[1]: []}
 marks = {players_names[0]: {'a1': ' A  X ',
                             'a2': '| X |',
